@@ -51,19 +51,24 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['password'])){
                 ?>
             </form>
             <form id="register" class="user-input" method="POST" action="user-register.php">
-                <input type="text" class="input-field" name="username" placeholder="UserID">
-                <input type="email" class="input-field" name="email" placeholder="Enter Email Address">
-                <input type="password" class="input-field" name="password"  placeholder="Enter Password">
-                <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
-                <?php
-                if (isset($_SESSION['registration_error'])) {
-                    echo '<div class="error-message">' . $_SESSION['registration_error'] . '</div>';
-                    unset($_SESSION['registration_error']); // Clear the error message
-                }
-                ?>
-            </form>
+    <input type="text" class="input-field" name="Firstname" placeholder="Enter FirstName">
+    <input type="text" class="input-field" name="Lastname" placeholder="Enter LastName">
+    <input type="email" name="email" class="input-field" placeholder="Enter Email Address" />
+    <input type="password" class="input-field" name="password" placeholder="Enter Password">
+    <input type="password" class="input-field" name="confirm_password" placeholder="Confirm Password">
+    <input type="checkbox" class="check-box" required><span>I agree to the terms and conditions</span>
+    <button type="submit" class="submit-btn">Register</button>
+    <?php
+    if (isset($_SESSION['registration_error']) && !empty($_SESSION['registration_error'])) {
+        echo $_SESSION['registration_error'];
+        unset($_SESSION['registration_error']);
+    }
+    ?>
+</form>
+
         </div>
     </div>
 </body>
 </html>
+
+

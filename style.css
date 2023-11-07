@@ -13,9 +13,10 @@
     background-size: cover;
     position: absolute;
 }
+
 .form-box {
     width: 380px;
-    height: 480px;
+    height: 680px;
     position: relative;
     margin: 6% auto;
     background: #fff;
